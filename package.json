@@ -1,0 +1,33 @@
+{
+  "name": "project-testing-practice",
+  "version": "1.0.0",
+  "description": "Practice testing with Jest",
+  "keywords": [
+    "Jest",
+    "TDD",
+    "testing",
+    "test"
+  ],
+  "homepage": "https://github.com/mostafa-imam/Project-Testing-Practice#readme",
+  "bugs": {
+    "url": "https://github.com/mostafa-imam/Project-Testing-Practice/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mostafa-imam/Project-Testing-Practice.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.29.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.0.3",
+    "globals": "^17.4.0",
+    "prettier": "3.8.1"
+  }
+}
