@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, analyzeArray, /* caesarCipher */ } from "./index.js";
+import { capitalize, reverseString, calculator, analyzeArray, caesarCipher } from "./index.js";
 import { describe, expect, test } from '@jest/globals';
 
 test("Capitalize first letter", () => {
@@ -31,8 +31,38 @@ describe("Calculator", () => {
 
 describe("Analyze Array", () => {
     const object = analyzeArray([1, 8, 3, 4, 2, 6]);
-    expect(object.average).toBe(4);
-    expect(object.min).toBe(1);
-    expect(object.max).toBe(8);
-    expect(object.length).toBe(6);
+
+    test("Returns average value of array", () => {
+        expect(object.average).toBe(4);
+    })
+
+    test("Returns min value of array", () => {
+        expect(object.min).toBe(1);
+    })
+
+    test("Returns max value of array", () => {
+        expect(object.max).toBe(8);
+    })
+
+    test("Returns length of array", () => {
+        expect(object.length).toBe(6);
+    })
+})
+
+describe("Caesar Cipher", () => {
+    test("returns a string with each character “shifted”", () => {
+        expect(caesarCipher("abc", 3)).toBe("def");
+    });
+
+    test("test wrapping from z to a", () => {
+        expect(caesarCipher("xyz", 3)).toBe("abc");
+    });
+
+    test("test case preservation", () => {
+        expect(caesarCipher('HeLLo', 3)).toBe("KhOOr");
+    });
+
+    test("test punctuation, spaces, and other non-alphabetical characters", () => {
+        expect(caesarCipher('Hello, World!', 3)).toBe('Khoor, Zruog!');
+    });
 })
