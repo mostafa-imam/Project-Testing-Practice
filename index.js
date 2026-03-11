@@ -1,4 +1,4 @@
-export { capitalize, reverseString, calculator, analyzeArray /* caesarCipher */ };
+export { capitalize, reverseString, calculator, analyzeArray, caesarCipher };
 
 function capitalize(string) {
     return string.at(0).toUpperCase() + string.slice(1);
@@ -26,6 +26,29 @@ const calculator = {
     divide(a, b) {
         return a / b;
     }
+};
+
+function caesarCipher(str, shift) {
+
+    const n = (shift % 26 + 26) % 26;
+
+    return [...str]
+        .map((char) => {
+            const c = char.charCodeAt(0);
+
+            if (c >= 65 && c <= 90) {
+                return String.fromCharCode(((c - 65 + n) % 26) + 65);
+            }
+
+            else if (c >= 97 && c <= 122) {
+                return String.fromCharCode(((c - 97 + n) % 26) + 97);
+            }
+
+            else {
+                return char;
+            }
+        })
+        .join('');
 };
 
 function analyzeArray(array) {
