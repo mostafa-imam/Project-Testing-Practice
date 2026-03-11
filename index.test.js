@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "./index.js";
+import { capitalize, reverseString, calculator, analyzeArray, /* caesarCipher */ } from "./index.js";
 import { describe, expect, test } from '@jest/globals';
 
 test("Capitalize first letter", () => {
@@ -27,5 +27,12 @@ describe("Calculator", () => {
         expect(calculator.divide(14, 2)).toBe(7);
     })
 
-})
+});
 
+describe("Analyze Array", () => {
+    const object = analyzeArray([1, 8, 3, 4, 2, 6]);
+    expect(object.average).toBe(4);
+    expect(object.min).toBe(1);
+    expect(object.max).toBe(8);
+    expect(object.length).toBe(6);
+})
