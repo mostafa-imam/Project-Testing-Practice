@@ -1,4 +1,4 @@
-export { capitalize, reverseString, calculator };
+export { capitalize, reverseString, calculator, analyzeArray /* caesarCipher */ };
 
 function capitalize(string) {
     return string.at(0).toUpperCase() + string.slice(1);
@@ -25,5 +25,25 @@ const calculator = {
 
     divide(a, b) {
         return a / b;
+    }
+};
+
+function analyzeArray(array) {
+    let total = array.reduce((sum, item) => {
+        return sum + item
+    }, 0);
+
+    let average = total / array.length;
+
+    let min = Math.min(...array);
+    let max = Math.max(...array);
+
+    let length = array.length;
+
+    return {
+        average,
+        min,
+        max,
+        length,
     }
 }
